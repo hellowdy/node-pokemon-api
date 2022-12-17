@@ -14,9 +14,10 @@ app.get('/api/pokemons/:id', (req,res) => {
     res.json(sucess(message, pokemon));
 });
 
-// le nouveau point de terminaison, affichant  le nombre total de pokémons :
+// On retourne la liste des pokémons au format JSON, avec un message :
 app.get('/api/pokemons', (req,res) => { 
-    res.send(`Il y a ${pokemons.length} pokémons dans le pokédex, pour le moment.`);
+    const message = 'La liste des pokémons à bien été récupéré.';
+    res.json(sucess(message, pokemons));
 });
 
 app.listen(port, () => console.log(`Notre application Node est démarrée sur : http://localhost:${port}`));
