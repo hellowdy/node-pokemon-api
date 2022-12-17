@@ -12,4 +12,9 @@ app.get('/api/pokemons/:id', (req,res) => {
     res.send(`Vous avez demandé de pokémon ${pokemon.name}`)
 });
 
+// le nouveau point de terminaison, affichant  le nombre total de pokémons :
+app.get('/api/pokemons', (req,res) => { 
+    res.send(`Il y a ${pokemons.length} pokémons dans le pokédex, pour le moment.`)
+});
+
 app.listen(port, () => console.log(`Notre application Node est démarrée sur : http://localhost:${port}`));
